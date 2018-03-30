@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  {% include header.html %}
+  <body>
+    <h1><a href="{{site.url}}" >{{ site.title }}</a></h1>
+    <div>
+      {% for page in site.pages %}
+        {% if page.title == 'Posts' %}
+        {% else %}
+          <a href="{{page.url}}" >{{ page.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <hr></hr>
+    <div class="page-content">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
