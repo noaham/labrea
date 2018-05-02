@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<a href='{{ site.baseurl }}/'>&larr; {{ site.title }}</a>
+
+<article class='justify'>
+  <h2 class='h3 mb1'><a href='{{ page.link }}'>{{ page.title }} &rarr;</a></h2>
+  <time class='grayish'>{{ page.date | date: '%B %-d, %Y' }}</time>
+  {{ content }}
+</article>
+
+{% include post_pagination.html %}

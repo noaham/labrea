@@ -1,11 +1,17 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h3 class="post-title">{{ page.title }}</h3>
-  </header>
-  <article class="post-content">
-    {{ content }}
-  </article>
-</div>
+
+<a href='{{ site.baseurl }}/'>&larr; Posts</a>
+
+<article class='justify'>
+  <div class='mb2'>
+    <h2 class='h3 mb0'><a href='{{ site.baseurl }}{{ page.url }}/'>{{ page.title }}</a></h2>
+    <time class='grayish'>{{ page.date | date: '%B %-d, %Y' }}</time>
+  </div>
+  {{ content }}
+
+  {% include medium-crosspost.html url=page.medium_url%}
+</article>
+
+{% include post_pagination.html %}
