@@ -1,24 +1,28 @@
 # labrea
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
-
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
+A [Jekyll](http://jekyllrb.com/) theme based on [Ace](https://github.com/aliou/ace) with only minor modifications. 
 
 
 ## Installation
 
-Add this line to your Jekyll site's `Gemfile`:
+Add this to your Jekyll site's `Gemfile`:
 
 ```ruby
 gem "labrea"
+gem "jekyll-paginate" # if you want pagination enabled
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
 theme: labrea
+```
+
+and ensure you have `jekyll-paginate` listed under gems in your `_config.yaml`:
+
+```yaml
+plugins:
+  - jekyl-paginate
 ```
 
 And then execute:
@@ -31,20 +35,49 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+### Navigation menu
+
+Navigation links are displayed below the heading. The default is a list of all pages in the site. You can customise this by adding something along the following lines to your `_config.yaml`:
+
+```yaml
+header_pages:
+  - about.md
+  - portfolio.md
+```
+
+This functionality is copied from the [minima theme](https://github.com/jekyll/minima)
+
+### Custom CSS
+
+If you would like to add custom CSS, create a file `/assets/css/main.scss` and add
+
+```css
+---
+---
+
+@import "ace";
+```
+at the beginning and place your custom code below.
+
+### Lightbox
+
+This theme has included a [minimal lightbox](https://jekyllcodex.org/without-plugin/lightbox/). All image and video links open in a lightbox. To prevent this behaviour on any specific link add the css class `.no-lightbox`. In markdown this is achieved in the following way
+
+```Markdown
+[link text](/link/address){:.no-lightbox}
+```
+
+### Image galleries
+
+This theme has included support for [image galleries](https://jekyllcodex.org/without-plugin/image-gallery/). Please read the information in that link before using, in particular images are resized and hosted by a third party. To insert a gallery into a post, create a directory in `/assets/images/` with the same name as your post and place your jpg images here. Place your post in a directory with the same name. Then insert
+
+```Markdown
+{% include image-gallery.html folder="." %}
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `labrea.gemspec` accordingly.
+Bug reports and pull requests are welcome on GitHub at https://github.com/noaham/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
