@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "labrea"
-  spec.version       = "0.2.1"
+  spec.name          = "labrea-theme"
+  spec.version       = "0.0.1"
   spec.authors       = ["noah"]
   spec.email         = ["noah.alexander.white@gmail.com"]
 

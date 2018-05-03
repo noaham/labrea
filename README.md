@@ -8,14 +8,14 @@ A [Jekyll](http://jekyllrb.com/) theme based on [Ace](https://github.com/aliou/a
 Add this to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "labrea"
+gem "labrea-theme"
 gem "jekyll-paginate" # if you want pagination enabled
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: labrea
+theme: labrea-theme
 ```
 
 and ensure you have `jekyll-paginate` listed under gems in your `_config.yaml`:
