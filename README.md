@@ -59,6 +59,16 @@ If you would like to add custom CSS, create a file `/assets/css/main.scss` and a
 ```
 at the beginning and place your custom code below.
 
+### No indexing
+
+The theme also comes with the possibility to stop search engines from indexing your site. If `noindexing: true` is added to your `_config.yaml`, the line
+
+```html
+<meta name="robots" content="noindex,nofollow">
+```
+
+is added to the header of every page.
+
 ### Lightbox
 
 This theme has included a [minimal lightbox](https://jekyllcodex.org/without-plugin/lightbox/). All image and video links open in a lightbox. To prevent this behaviour on any specific link add the css class `.no-lightbox`. In markdown this is achieved in the following way
