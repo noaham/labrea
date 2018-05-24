@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "labrea-theme"
-  spec.version       = "0.0.6"
+  spec.version       = "0.0.7"
   spec.authors       = ["noah"]
   spec.email         = ["noah.alexander.white@gmail.com"]
 
